@@ -6,6 +6,7 @@ import pickle
 from dataset.mnist import load_mnist
 from common.functions import sigmoid, softmax
 
+add_path = "./sample-code/ch03/"
 
 def get_data():
     (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, flatten=True, one_hot_label=False)
@@ -13,7 +14,7 @@ def get_data():
 
 
 def init_network():
-    with open("sample_weight.pkl", 'rb') as f:
+    with open(add_path + "sample_weight.pkl", 'rb') as f:
         network = pickle.load(f)
     return network
 
