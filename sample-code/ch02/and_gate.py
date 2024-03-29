@@ -1,6 +1,10 @@
 # coding: utf-8
 import numpy as np
 
+# -
+# x1
+# x2
+# -
 
 def AND(x1, x2):
     x = np.array([x1, x2])
