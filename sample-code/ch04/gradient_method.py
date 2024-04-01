@@ -12,6 +12,7 @@ def gradient_descent(f, init_x, lr=0.01, step_num=100):
         x_history.append( x.copy() )
 
         grad = numerical_gradient(f, x)
+        # Lagrange multiplier
         x -= lr * grad
 
     return x, np.array(x_history)
@@ -20,7 +21,7 @@ def gradient_descent(f, init_x, lr=0.01, step_num=100):
 def function_2(x):
     return x[0]**2 + x[1]**2
 
-init_x = np.array([-3.0, 4.0])    
+init_x = np.array([-3.0, 4.0])
 
 lr = 0.1 # 0.1
 step_num = 20

@@ -15,11 +15,7 @@
 
 ゲートの種類
 
-- AND
-- OR
-- NAND
-- XOR
-
+- AND, OR, NAND, XOR
 - 自動でパラメータを調整したい
 - $\bold{y} = h(\bold{x})(\bold{w} \bold{x} + \bold{b})$
 - $h(\bold{x})$を活性化関数と呼ぶ

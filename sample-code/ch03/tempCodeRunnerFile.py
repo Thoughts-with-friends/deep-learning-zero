@@ -1,1 +1,1 @@
-sample_weight
+# plt.ylim(-0.1, 1.1)  # 図で描画するy軸の範囲を指定
