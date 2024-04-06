@@ -1,4 +1,4 @@
-# deep learning
+# Deep Learning
 
 ## ch04 数値微分と勾配降下法
 
@@ -11,22 +11,22 @@
 
 勾配降下法
 
-- 中心差分で gradient を計算し、ラグランジュ乗数法で極値（最大・最小の候補点）を求める
-- 学習率(learning rate)を上手に調整することで、過学習を防止しながら自動計算が可能
+- 中心差分で gradient を計算し、ラグランジュ乗数法で極値（最大・最小の候補点）を求める手法
+- 学習率 $lr$ (learning rate)を上手に調整することで、過学習を防止しながら自動計算が可能
 
-復習: テイラー展開
+＜復習＞ テイラー展開
 
-- マクローリン展開の一般化
+- テイラー展開 = マクローリン展開の一般化
   [https://manabitimes.jp/math/570]
 
-- $f(x) = x^3$のマクローリン展開
+- 例: $f(x) = x^3$のマクローリン展開
 
 $f(x) = x^3$
 $f'(x) = 3x^2$
 $f''(x) = 6x$
 $f'''(x) = 6$
 
-よって
+となる。よって、
 $f(x) = 0 + 0 + 0 + \frac{6}{6} x^3 = x^3$
 
 - $\frac{x^k}{k!}$になる理由
@@ -37,13 +37,15 @@ $\frac{d^2f}{d^2x} = (n-1)(n-2) x^(n-2)$
 $\frac{d^3f}{d^3x} = (n-1)(n-2)(n-3) x^(n-3)$
 ...
 $\frac{d^{(n-1)}f}{d^{(n-1)}x} = (n-1)! x^(n-n+1)$
+
 $\frac{d^{(n)}f}{d^{(n)}x} = n!$
 
 $3! = 3 × 2 × 1$
 
--　一次近似（線形近似）
-$f(x) \approx f(0) +  f'(0) x$
-$y = ax + b$ の形
+- 一次近似（線形近似）
+
+  - $y = ax + b$ の形
+    $f(x) \approx f(0) +  f'(0) x$
 
 - 二次近似
   $f(x) \approx f(0) + f'(0) x + \frac{f''(0)}{2} x^2$
@@ -91,11 +93,11 @@ fn main()
 
 - [sample](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=7131e73cd764668b7e2f494a01a0f7b1)
 
-## 内積
+- 内積
 
-- 2 つのベクトルの相関関係を面積
-  $A * A = |A| * |A|$
-  $A * B = |A| * |B| cos(\theta)$
+  - 2 つのベクトルの相関関係を面積
+    $A * A = |A| * |A|$
+    $A * B = |A| * |B| cos(\theta)$
 
 ## ch04 勾配降下法
 
@@ -121,13 +123,14 @@ $y(W) = Wx + b$
 3. $grad(L) = \nabla L = \frac{\partial L}{\partial \bold{W}}$ を計算する
 4. $(W, b)_{new} = (W, b)_{old} - \lambda \nabla L$ で重み $W$ とバイアス $b$ を更新する
 
-- ベクトル解析: $\nabla$ 演算子について
+## ベクトル解析
 
-  - 3 つある($grad, div, rot$)
+- $\nabla$ 演算子について
+
+  - $\nabla$ は特別な記号で、3 つある($grad, div, rot$)
   - $\nabla = grad = (\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z})$
   - 今回は
     $\nabla = \frac{\partial}{\partial \bold{W}} = (\frac{\partial}{\partial W_1}, \frac{\partial}{\partial W_2}, \frac{\partial}{\partial W_3})$
-  - $\nabla$ は特別
   - $\bold{v}$はベクトル$(x_1, x_2, x_3)$とする
   - 発散、湧き出し、ダイバージェンス (divergence)
   - $div(\bold{v})$
