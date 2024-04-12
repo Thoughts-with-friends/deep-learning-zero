@@ -62,7 +62,8 @@
 
       - $\sqrt{2}$ の値を求めるプログラム
 
-- [Playground](https://godbolt.org/z/P69eMcfvK)
+- [Playground(Python3)](https://godbolt.org/z/P69eMcfvK)
+- [Playground(Rust)](https://godbolt.org/z/4sqKcs6eq)
 
 ```python
 # 適当な初期値の設定
