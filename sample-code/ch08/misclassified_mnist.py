@@ -58,3 +58,4 @@ print("{view index: (label, inference), ...}")
 print(mis_pairs)
 
 plt.show()
+

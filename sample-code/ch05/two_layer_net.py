@@ -63,13 +63,13 @@ class TwoLayerNet:
         # backward
         dout = 1
         dout = self.lastLayer.backward(dout)
-        
+
         layers = list(self.layers.values())
         layers.reverse()
         for layer in layers:
             dout = layer.backward(dout)
 
-        # 設定
+        # 設定 (Ax + b): Affine
         grads = {}
         grads['W1'], grads['b1'] = self.layers['Affine1'].dW, self.layers['Affine1'].db
         grads['W2'], grads['b2'] = self.layers['Affine2'].dW, self.layers['Affine2'].db

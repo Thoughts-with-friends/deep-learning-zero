@@ -25,4 +25,4 @@ for param in network.params.values():
     param[...] = param.astype(np.float16)
 
 print("caluculate accuracy (float16) ... ")
-print(network.accuracy(x_test, t_test))
+print(f"{network.accuracy(x_test, t_test)*100} [%]")
